@@ -1,0 +1,18 @@
+{
+  "type": "module",
+  "workspaces": [
+    "lib/*",
+    "demo/*",
+    "app/*"
+  ],
+  "devDependencies": {
+    "@types/node": "^22.8.1",
+    "@types/react": "^19.0.8",
+    "@types/react-dom": "^19.0.3",
+    "esbuild": "^0.25.0"
+  },
+  "dependencies": {
+    "react": "^19.0.0",
+    "react-dom": "^19.0.0"
+  }
+}

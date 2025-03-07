@@ -1,0 +1,6 @@
+{
+  "scripts": {
+    "serve": "node ../../script/react-app.js dev \"react app\"",
+    "build": "node ../../script/react-app.js pro \"this is a react app\""
+  }
+}
