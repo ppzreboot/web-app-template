@@ -1,5 +1,5 @@
 // @ts-check
-import { writeFileSync, mkdirSync, rmSync } from 'node:fs'
+import { writeFileSync, mkdirSync, rmSync, existsSync, cpSync } from 'node:fs'
 import { context, build } from 'esbuild'
 
 const is_pro = (() => {
@@ -21,6 +21,9 @@ function main() {
 
   /* 2. output html */
   output_html()
+
+  /* 3. favicon */
+  favicon()
 
   /** @type {import('esbuild').BuildOptions} */
   const options = {
@@ -78,4 +81,9 @@ function empty_dist() {
     console.log('dist not exist')
   }
   mkdirSync('dist')
+}
+
+function favicon() {
+  if (existsSync('src/favicon.ico'))
+    cpSync('src/favicon.ico', 'dist/favicon.ico')
 }
